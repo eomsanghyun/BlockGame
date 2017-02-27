@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1488181082 source:d:\c++\tetris\main.cpp
+	"myHeader.hpp"
+	"layout.hpp"
+	"block.hpp"
+	"control.hpp"
+
+1487992017 d:\c++\tetris\header\myheader.hpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+
+1487991751 d:\c++\tetris\header\layout.hpp
+
+1487991751 source:d:\c++\tetris\header\layout.hpp
+
+1488179354 d:\c++\tetris\myheader.hpp
+	<windows.h>
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<ctime>
+	<cstdlib>
+
+1488180339 d:\c++\tetris\layout.hpp
+
+1488180341 source:d:\c++\tetris\layout.cpp
+	"layout.hpp"
+	"draw.hpp"
+
+1488024742 d:\c++\tetris\draw.hpp
+	"myHeader.hpp"
+
+1488024745 source:d:\c++\tetris\draw.cpp
+	"draw.hpp"
+
+1488181129 source:d:\c++\tetris\block.cpp
+	"myHeader.hpp"
+	"block.hpp"
+	"draw.hpp"
+	"layout.hpp"
+
+1488179519 d:\c++\tetris\block.hpp
+
+1488179461 source:d:\c++\tetris\control.cpp
+	"control.hpp"
+	"myHeader.hpp"
+
+1488179472 d:\c++\tetris\control.hpp
+	<conio.h>
+	<iostream>
+	"block.hpp"
+	"layout.hpp"
+
