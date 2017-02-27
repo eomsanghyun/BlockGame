@@ -99,6 +99,9 @@ void Block::draw() {
             if(arr[r][c/2] == 1) {
                 gotoxy(startX+c,startY+r);
                 printf("бс");
+
+                gotoxy(60+c,20+r);
+                printf("бс");
             }
         }
     }
@@ -109,7 +112,6 @@ void Block::dropDown() {
 }
 
 void Block::shiftLeft() {
-
     if( this->startX >= marginLeft+4)
         this->startX-=2;
 }
@@ -117,5 +119,40 @@ void Block::shiftLeft() {
 void Block::shiftRight() {
     if( this->startX + ((this->col)-1)*2 <= marginLeft+WIDTH-4)
         this->startX+=2;
+}
+
+void Block::turnRight() {
+
+    int tempArr[this->row][this->col];
+
+    for(int r=0; r < this->row; r++) {
+        for(int c=0; c < this->col; c++) {
+            tempArr[r][c] = this->arr[r][c];
+        }
+    }
+
+    //free
+    for(int i=0; i<row; i++) {
+        delete [] arr[i];
+    }
+
+    delete []arr;
+
+    //turn
+    int temp = this->row;
+    this->row = this->col;
+    this->col = temp;
+
+    arr = new int*[this->row];
+    for(int r=0; r < this->row; r++) {
+        arr[r] = new int[this->col];
+    }
+
+    for(int r=0; r < this->row; r++) {
+        for(int c=0; c < this->col; c++) {
+
+            arr[r][c] = tempArr[c][this->row -r-1];
+        }
+    }
 }
 

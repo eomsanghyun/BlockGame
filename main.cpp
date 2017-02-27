@@ -3,7 +3,7 @@
 #include "block.hpp"
 #include "control.hpp"
 
-unsigned int microseconds = 10000;
+unsigned int microseconds = 50000;
 
 bool isOver = false;
 bool regen = true;
@@ -31,23 +31,28 @@ int main()
         }
 
         if(GetAsyncKeyState(VK_LEFT)) {
-                newBlock->shiftLeft();
+                if( isLeftOk(gameMap,newBlock) ) {
+                    newBlock->shiftLeft();
+                }
         }
 
         else if(GetAsyncKeyState(VK_RIGHT)) {
-                newBlock->shiftRight();
-
+                if( isRightOk(gameMap,newBlock)) {
+                    newBlock->shiftRight();
+                }
         }
 
         else if(GetAsyncKeyState(VK_UP)) {
-                newBlock->shiftRight();
-
+                if( isTurnOk(gameMap,newBlock)) {
+                    newBlock->turnRight();
+                }
         }
 
         newBlock->draw();
 
         if(isBottom(gameMap,newBlock)) {
             addBlock(gameMap,newBlock);
+           // checkTetris(gameMap,newBlock);
             regen = true;
 
             delete newBlock;

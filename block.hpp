@@ -26,6 +26,7 @@ public:
     void shiftLeft();
     void shiftRight();
     void getYpoint();
+    void turnRight();
 };
 
 #endif // BLOCK_HPP_INCLUDED

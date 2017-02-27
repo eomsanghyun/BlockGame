@@ -26,16 +26,22 @@ void drawLayout() {
         gotoxy(xPoint,marginTop+HEIGTH);
         printf("бр");
     }
-    /*
-         gotoxy(marginLeft, marginTop);
-         printf("бс");
 
-         gotoxy(marginLeft+2, marginTop+1);
-         printf("бс");
+    //block window
+    for(int x=56; x<67; x+=2) {
+        gotoxy(x,18);
+        printf("б┌");
+        gotoxy(x,24);
+        printf("б┌");
+    }
 
-         gotoxy(marginLeft+WIDTH-2, marginTop+HEIGTH-1);
-         printf("бс");
-         */
+    for(int y=18; y<24; y++) {
+        gotoxy(56,y);
+        printf("б┌");
+        gotoxy(67,y);
+        printf("б┌");
+    }
+
 }
 
 Map::Map() {
