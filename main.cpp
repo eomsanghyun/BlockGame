@@ -26,7 +26,7 @@ int main()
 
         if(regen) {
             int randomNum = rand()%7;
-            newBlock = new Block(randomNum);
+            newBlock = new Block(6);
             regen = false;
         }
 

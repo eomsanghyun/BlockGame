@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1488210755 source:d:\c++\tetris\main.cpp
+1488424839 source:d:\c++\tetris\main.cpp
 	"myHeader.hpp"
 	"layout.hpp"
 	"block.hpp"
@@ -43,7 +43,7 @@
 
 1488207337 d:\c++\tetris\block.hpp
 
-1488210750 source:d:\c++\tetris\control.cpp
+1488425479 source:d:\c++\tetris\control.cpp
 	"control.hpp"
 	"myHeader.hpp"
 

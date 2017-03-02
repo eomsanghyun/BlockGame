@@ -81,13 +81,22 @@ bool isRightOk(Map *gameMap, Block *block) {
 }
 
 bool isTurnOk (Map *gameMap, Block *block) {
-    bool result = true;
 
-    int endY = block->startY + block->row;
+    int endY = block->startY + block->col;
 
-    if( endY > gameMap->rightBottomY) result = false;
+    if( endY > gameMap->rightBottomY) return false;
 
-    return result;
+    int checkY = endY;
+    int checkX=0;
+
+    for(int r=0; r<block->row; r++) {
+        checkX = block->startX + r*2;
+
+        if(gameMap->mapArr[checkY - gameMap->leftTopY][checkX  - gameMap->leftTopX] == 1) {
+            return false;
+        }
+    }
+    return true;
 }
 
 void checkTetris(Map *gameMap, Block *block) {
