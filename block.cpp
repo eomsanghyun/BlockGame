@@ -6,6 +6,7 @@
 extern int marginTop;
 extern int marginLeft;
 
+
 Block::Block(int num) {
 
     startX = 5;
@@ -74,18 +75,19 @@ Block::Block(int num) {
 
 void Block::setArr() {
     arr = new int*[row];
-    for(int i=0; i<row; i++) {
+    for(int i=0; i < row; i++) {
         arr[i] = new int[col];
     }
 
-    for(int r=0; r<row; r++) {
+    for(int r=0; r < row; r++) {
         for(int c=0; c<col; c++) {
             arr[r][c] = 1;
         }
     }
 }
+
 Block::~Block() {
-    for(int i=0; i<row; i++) {
+    for(int i=0; i < row; i++) {
         delete [] arr[i];
     }
 
@@ -94,12 +96,13 @@ Block::~Block() {
 
 void Block::draw() {
 
-    for(int r=0; r<row; r++) {
-        for(int c=0; c<col*2; c+=2) {
+    for(int r=0; r < row; r++) {
+        for(int c=0; c < col*2; c+=2) {
             if(arr[r][c/2] == 1) {
                 gotoxy(startX+c,startY+r);
                 printf("■");
 
+                //미리보기
                 gotoxy(60+c,20+r);
                 printf("■");
             }
@@ -135,7 +138,6 @@ void Block::turnRight() {
     for(int i=0; i<row; i++) {
         delete [] arr[i];
     }
-
     delete []arr;
 
     //turn
@@ -155,4 +157,3 @@ void Block::turnRight() {
         }
     }
 }
-

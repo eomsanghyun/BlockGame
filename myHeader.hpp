@@ -9,8 +9,6 @@
 #include <ctime>
 #include <cstdlib>
 
-
-
 using namespace std;
 
 #endif // MYHEADER_HPP_INCLUDED

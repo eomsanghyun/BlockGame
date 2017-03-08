@@ -11,10 +11,8 @@ public:
     int row;
     int col;
     int **arr;
-
     int startX = 10;
     int startY = 10;
-
 
     Block(int num);
     ~Block();

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1488424839 source:d:\c++\tetris\main.cpp
+1488983492 source:d:\c++\tetris\main.cpp
 	"myHeader.hpp"
 	"layout.hpp"
 	"block.hpp"
@@ -14,7 +14,7 @@
 
 1487991751 source:d:\c++\tetris\header\layout.hpp
 
-1488179354 d:\c++\tetris\myheader.hpp
+1488983499 d:\c++\tetris\myheader.hpp
 	<windows.h>
 	<iostream>
 	<stdio.h>
@@ -23,31 +23,31 @@
 	<ctime>
 	<cstdlib>
 
-1488180339 d:\c++\tetris\layout.hpp
+1488983541 d:\c++\tetris\layout.hpp
 
-1488211266 source:d:\c++\tetris\layout.cpp
+1488983964 source:d:\c++\tetris\layout.cpp
 	"layout.hpp"
 	"draw.hpp"
 
 1488024742 d:\c++\tetris\draw.hpp
 	"myHeader.hpp"
 
-1488024745 source:d:\c++\tetris\draw.cpp
+1488983969 source:d:\c++\tetris\draw.cpp
 	"draw.hpp"
 
-1488210974 source:d:\c++\tetris\block.cpp
+1488984910 source:d:\c++\tetris\block.cpp
 	"myHeader.hpp"
 	"block.hpp"
 	"draw.hpp"
 	"layout.hpp"
 
-1488207337 d:\c++\tetris\block.hpp
+1488983588 d:\c++\tetris\block.hpp
 
-1488425479 source:d:\c++\tetris\control.cpp
+1488984784 source:d:\c++\tetris\control.cpp
 	"control.hpp"
 	"myHeader.hpp"
 
-1488210196 d:\c++\tetris\control.hpp
+1488983559 d:\c++\tetris\control.hpp
 	<conio.h>
 	<iostream>
 	"block.hpp"

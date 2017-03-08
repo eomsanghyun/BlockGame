@@ -5,7 +5,6 @@ int xPoint,yPoint=0;
 int marginTop = 5;
 int marginLeft = 3;
 
-
 void drawLayout() {
     for (yPoint=marginTop; yPoint<marginTop+HEIGTH; yPoint++) {
         //draw left
@@ -41,7 +40,6 @@ void drawLayout() {
         gotoxy(67,y);
         printf("¡Ú");
     }
-
 }
 
 Map::Map() {
@@ -69,28 +67,7 @@ Map::Map() {
     }
 }
 
-void Map::checkMap() {
-/*
-    for(int r= this->leftTopY; r<= this->rightBottomY; r++) {
-        for(int c=this->leftTopX; c<= this->rightBottomX; c++) {
-            gotoxy(c,r);
-            printf("t");
-        }
-    }
-*/
-     //initialize
-    for(int r=0; r<this->row; r++) {
-        for(int c=0; c<this->col; c++) {
-            if(mapArr[r][c] == 0) {
-                gotoxy(c+this->leftTopX,r+leftTopY);
-                printf("a");
-            }
-        }
-    }
-}
-
 void Map::drawBlock() {
-      //initialize
     for(int r=0; r < this->row; r++) {
         for(int c=0; c < this->col; c++) {
             if(mapArr[r][c] == 1) {

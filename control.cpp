@@ -2,30 +2,26 @@
 #include "myHeader.hpp"
 
 bool isBottom(Map *gameMap, Block *block) {
-    bool result = false;
-    //check block bottom
 
-    for(int r=0; r<block->row; r++) {
-        for(int c=0; c < block->col*2 ; c+=2) {
+    for(int r=0; r < block->row; r++) {
+        for(int c=0; c < block->col*2 ; c+=2) { //because бс hold 2pixels
             if(block->arr[r][c/2] == 1) {
-                int checkY =(r+1) + block->startY;
+                int checkY =(r+1) + block->startY; //predict next block
                 int checkX = c + block->startX;
 
-                    if(checkY == gameMap->rightBottomY+1)  {
-                        result = true;
-                        break;
+                    if(checkY == gameMap->rightBottomY+1) { //check maximum Y of map
+                        return true;
                     }
 
-                    else if(gameMap->mapArr[checkY - gameMap->leftTopY][checkX  - gameMap->leftTopX] == 1){
-                        result = true;
-                        break;
+                    else if(gameMap->mapArr[checkY - gameMap->leftTopY][checkX - gameMap->leftTopX] == 1){
+                        return true;
                     }
             }
         }
     }
-
-    return result;
+    return false;
 }
+
 
 void addBlock(Map *gameMap, Block *block) {
     for(int r=0; r < block->row; r++) {
@@ -34,14 +30,13 @@ void addBlock(Map *gameMap, Block *block) {
                 int addY = r + block->startY;
                 int addX = c*2 + block->startX;
 
-                gameMap->mapArr[addY - gameMap->leftTopY][addX  - gameMap->leftTopX] = 1;
+                gameMap->mapArr[addY - gameMap->leftTopY][addX - gameMap->leftTopX] = 1;
             }
         }
     }
 }
 
 bool isLeftOk(Map *gameMap, Block *block) {
-    bool result = true;
 
     for(int r=0; r < block->row; r++) {
         for(int c=0; c < block->col*2 ; c+=2) {
@@ -50,18 +45,15 @@ bool isLeftOk(Map *gameMap, Block *block) {
                 int checkX = (c-2) + block->startX;
 
                 if(gameMap->mapArr[checkY - gameMap->leftTopY][checkX  - gameMap->leftTopX] == 1){
-                    result = false;
-                    break;
-                }
+                    return false;                }
             }
         }
     }
 
-    return result;
+    return true;
 }
 
 bool isRightOk(Map *gameMap, Block *block) {
-    bool result = true;
 
     for(int r=0; r < block->row; r++) {
         for(int c=0; c < block->col*2 ; c+=2) {
@@ -70,14 +62,13 @@ bool isRightOk(Map *gameMap, Block *block) {
                 int checkX = (c+2) + block->startX;
 
                 if(gameMap->mapArr[checkY - gameMap->leftTopY][checkX  - gameMap->leftTopX] == 1){
-                        result = false;
-                        break;
+                        return false;
                 }
             }
         }
     }
 
-    return result;
+    return true;
 }
 
 bool isTurnOk (Map *gameMap, Block *block) {
@@ -89,7 +80,7 @@ bool isTurnOk (Map *gameMap, Block *block) {
     int checkY = endY;
     int checkX=0;
 
-    for(int r=0; r<block->row; r++) {
+    for(int r=0; r < block->row; r++) {
         checkX = block->startX + r*2;
 
         if(gameMap->mapArr[checkY - gameMap->leftTopY][checkX  - gameMap->leftTopX] == 1) {
@@ -99,21 +90,4 @@ bool isTurnOk (Map *gameMap, Block *block) {
     return true;
 }
 
-void checkTetris(Map *gameMap, Block *block) {
-/*
-    int checkStartY = block->startY - gameMap->leftTopY;
-    int checkEndY= checkStartY + block->row - gameMap->leftTopY;
 
-    for(int r= checkStartY; r=checkEndY; r++) {
-        bool isTetris = true;
-        for(int c=0; c < gameMap->col; c++) {
-            if(c%2 == 0 ) {
-                if(gameMap->mapArr[r][c] == 0) {
-                    isTetris = false;
-                }
-            }
-        }
-    }
-
-*/
-}

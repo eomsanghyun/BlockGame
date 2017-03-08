@@ -1,6 +1,5 @@
 #include "draw.hpp"
 
-
 COORD coord={0,0};
 
 void gotoxy(int x,int y)
